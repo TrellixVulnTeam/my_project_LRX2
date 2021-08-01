@@ -27,12 +27,11 @@ for item in item_list:
 # world python best
 
 
-#file — файлоподобный объект (поток). По умолчанию — это sys.stdout.
+# file — файлоподобный объект (поток). По умолчанию — это sys.stdout.
 # Здесь можно указать файл, в который нужно записать или добавить данные из функции print.
 
-file = open('print.txt','a+')
+file = open('print.txt', 'a+')
 
 for item in item_list:
-    print(item,file=file)
+    print(item, file=file)
 file.close()
-
