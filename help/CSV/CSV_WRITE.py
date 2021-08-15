@@ -12,10 +12,13 @@ DATA = [['hostname', 'vendor', 'model', 'location'],
 # простая запись данных в файл .csv и вывод результата
 with open('kp_data_write_1.csv', 'w') as f_n:
     F_N_WRITER = csv.writer(f_n)
+    print(F_N_WRITER)
     for row in DATA:
+        print(row)
         F_N_WRITER.writerow(row)
 
 with open('kp_data_write_1.csv') as f_n:
+    print(f_n.read)
     print(type(f_n.read()))
 
 # ---------------------------------------------------------------------#
