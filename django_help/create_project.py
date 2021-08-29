@@ -26,3 +26,9 @@
 
 # после создания модели необходимо выполнить миграции
 # python manage.py makemigrations name_apps
+# python manage.py migrate
+
+# Wall.objects.create('column_name',) создание записи в таблице(модели)
+
+# создание суперюзера
+# python manage.py createsuperuser

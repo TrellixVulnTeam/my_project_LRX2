@@ -1,0 +1,14 @@
+{% extends 'wall/layout/basic.html' %}
+
+{% block title %} {{ current_rubric.name }} {% endblock %}
+
+{% block content %}
+<h2>Рубрика:{{ current_rubric.name }}</h2>
+    {% for wall in walls %}
+    <div>
+        <h2>{{ wall.title }}</h2>
+        <p>{{ wall.content }}</p>
+        <p>{{ wall.published|date:"d.m.Y H:i:s" }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
