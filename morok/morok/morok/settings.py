@@ -83,7 +83,6 @@ WSGI_APPLICATION = 'morok.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': 'geekshop',
         'ENGINE': 'django.db.backends.postgresql',
         'name':'morok',
         'USER': 'postgres',
