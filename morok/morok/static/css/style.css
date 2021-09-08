@@ -1,0 +1,21 @@
+.block-content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    flex-wrap: wrap;
+}
+
+.header {
+	color: red;
+	margin-bottom: 50px;
+}
+
+.col{
+	flex-grow: 0;
+}
+
+.static-block{
+	display: flex;
+	max-width: 1300px;
+
+}
