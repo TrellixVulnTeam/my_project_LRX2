@@ -17,7 +17,7 @@ def index(request):
     static_4 = Player.objects.filter(static_id='4')
     context = {
         'all_player': all_player,
-        'title': 'Гильдия Морок',
+        'title': 'Гильдия Призраки Азерота',
         'all_static': all_static,
         'static_1': static_1,
         'static_2': static_2,
