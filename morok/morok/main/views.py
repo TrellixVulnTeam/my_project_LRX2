@@ -14,7 +14,7 @@ def index(request):
     static_1 = Player.objects.filter(static_id='1')
     static_2 = Player.objects.filter(static_id='2')
     static_3 = Player.objects.filter(static_id='3')
-    static_4 = Player.objects.filter(static_id='4')
+    static_4 = Player.objects.filter(static_name='На рассмотрении в статик')
     context = {
         'all_player': all_player,
         'title': 'Гильдия Призраки Азерота',
