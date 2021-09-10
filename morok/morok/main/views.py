@@ -14,6 +14,7 @@ def index(request):
     static_1 = Player.objects.filter(static_id='1')
     static_2 = Player.objects.filter(static_id='2')
     static_3 = Player.objects.filter(static_id='3')
+    static_4 = Player.objects.filter(static_id='4')
     context = {
         'all_player': all_player,
         'title': 'Гильдия Морок',
@@ -21,6 +22,7 @@ def index(request):
         'static_1': static_1,
         'static_2': static_2,
         'static_3': static_3,
+        'static_4': static_4,
     }
     return render(request, 'main/index.html', context)
 
