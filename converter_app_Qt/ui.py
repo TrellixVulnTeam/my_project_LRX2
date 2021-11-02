@@ -51,6 +51,27 @@ class Ui_MainWindow(object):
         self.label_3.setFont(font)
         self.label_3.setStyleSheet("color:white")
         self.label_3.setObjectName("label_3")
+        self.widget = QtWidgets.QWidget(self.frame)
+        self.widget.setEnabled(True)
+        self.widget.setGeometry(QtCore.QRect(10, 110, 361, 191))
+        self.widget.setStyleSheet("background-color: black")
+        self.widget.setObjectName("widget")
+        self.error_label = QtWidgets.QLabel(self.widget)
+        self.error_label.setGeometry(QtCore.QRect(130, 40, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft Sans Serif")
+        font.setPointSize(18)
+        self.error_label.setFont(font)
+        self.error_label.setStyleSheet("color:white")
+        self.error_label.setObjectName("error_label")
+        self.error_push_button = QtWidgets.QPushButton(self.widget)
+        self.error_push_button.setGeometry(QtCore.QRect(140, 130, 75, 23))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft Sans Serif")
+        font.setPointSize(12)
+        self.error_push_button.setFont(font)
+        self.error_push_button.setStyleSheet("color:red")
+        self.error_push_button.setObjectName("error_push_button")
         self.input_valute_from = QtWidgets.QLineEdit(self.centralwidget)
         self.input_valute_from.setGeometry(QtCore.QRect(50, 340, 291, 61))
         font = QtGui.QFont()
@@ -58,9 +79,9 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.input_valute_from.setFont(font)
         self.input_valute_from.setStyleSheet("background-color:#22222e;\n"
-                                             "border:2px solid white;\n"
-                                             "border-radius:30;\n"
-                                             "color:white;")
+"border:2px solid white;\n"
+"border-radius:30;\n"
+"color:white;")
         self.input_valute_from.setText("")
         self.input_valute_from.setAlignment(QtCore.Qt.AlignCenter)
         self.input_valute_from.setObjectName("input_valute_from")
@@ -71,9 +92,9 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.input_money.setFont(font)
         self.input_money.setStyleSheet("background-color:#22222e;\n"
-                                       "border:2px solid white;\n"
-                                       "border-radius:30;\n"
-                                       "color:white;")
+"border:2px solid white;\n"
+"border-radius:30;\n"
+"color:white;")
         self.input_money.setText("")
         self.input_money.setAlignment(QtCore.Qt.AlignCenter)
         self.input_money.setObjectName("input_money")
@@ -84,9 +105,9 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.input_valute_to.setFont(font)
         self.input_valute_to.setStyleSheet("background-color:#22222e;\n"
-                                           "border:2px solid white;\n"
-                                           "border-radius:30;\n"
-                                           "color:white;")
+"border:2px solid white;\n"
+"border-radius:30;\n"
+"color:white;")
         self.input_valute_to.setText("")
         self.input_valute_to.setAlignment(QtCore.Qt.AlignCenter)
         self.input_valute_to.setObjectName("input_valute_to")
@@ -97,29 +118,29 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.result.setFont(font)
         self.result.setStyleSheet("background-color:#22222e;\n"
-                                  "border:2px solid white;\n"
-                                  "border-radius:30;\n"
-                                  "color:white;")
+"border:2px solid white;\n"
+"border-radius:30;\n"
+"color:white;")
         self.result.setText("")
         self.result.setAlignment(QtCore.Qt.AlignCenter)
         self.result.setObjectName("result")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(60, 710, 261, 51))
+        self.convert_button = QtWidgets.QPushButton(self.centralwidget)
+        self.convert_button.setGeometry(QtCore.QRect(60, 710, 261, 51))
         font = QtGui.QFont()
         font.setFamily("Microsoft Sans Serif")
         font.setPointSize(14)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton {\n"
-                                      "    color: white;\n"
-                                      "    background-color: #fb5b5d;\n"
-                                      "    border-radius:20;\n"
-                                      "}\n"
-                                      "\n"
-                                      "QPushButton:pressed{\n"
-                                      "    background-color: #f24244\n"
-                                      "}\n"
-                                      "")
-        self.pushButton.setObjectName("pushButton")
+        self.convert_button.setFont(font)
+        self.convert_button.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"    background-color: #fb5b5d;\n"
+"    border-radius:20;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: #f24244\n"
+"}\n"
+"")
+        self.convert_button.setObjectName("convert_button")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -130,15 +151,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "Конвертер валют"))
         self.label_3.setText(_translate("MainWindow", "RUB - USD"))
-        self.pushButton.setText(_translate("MainWindow", "Конвертировать"))
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+        self.error_label.setText(_translate("MainWindow", "Ошибка!"))
+        self.error_push_button.setText(_translate("MainWindow", "ОК"))
+        self.convert_button.setText(_translate("MainWindow", "Конвертировать"))
