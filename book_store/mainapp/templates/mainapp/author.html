@@ -1,0 +1,24 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<ul>
+    {% if authors %}
+        {% for author in authors %}
+            <li>
+                author.name
+                author.last_name
+                author.birthday
+                author.description
+            </li>
+
+        {% endfor %}
+    {% else %}
+        <div>
+            Авторы не найдены
+        </div>
+    {% endif %}
+</ul>
+
+
+{% endblock %}

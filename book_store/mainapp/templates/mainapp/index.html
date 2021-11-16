@@ -1,0 +1,28 @@
+{% extends "mainapp/base.html" %}
+{% load static %}
+{% block content %}
+<h1>Магазин книг</h1>
+<h2>Книги</h2>
+<ul>
+    {% if book_category %}
+        {% for category in book_category %}
+        <li>{{ category.title }}</li>
+        {% endfor %}
+    {% else %}
+        <div>
+            Категорий нет
+        </div>
+    {% endif %}
+</ul>
+<ul>
+    {% if books %}
+        {% for book in books %}
+        <li> {{book.title}}</li>
+        {% endfor %}
+    {% else %}
+        <div>
+            Книги не найдены
+        </div>
+    {% endif %}
+</ul>
+{% endblock %}
