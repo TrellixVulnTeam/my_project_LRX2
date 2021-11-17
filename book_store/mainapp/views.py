@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Book, BookCategory,Author
+from .models import Book, BookCategory, Author
 from django.views.generic.list import ListView
 
 
@@ -7,6 +7,7 @@ class IndexListView(ListView):
     model = Book
     template_name = 'mainapp/index.html'
     context_object_name = 'books'
+
     # book_category = BookCategory.objects.all()
     # extra_context = {'book_category': book_category}
 
@@ -21,9 +22,10 @@ class IndexListView(ListView):
 class ContactsListView(ListView):
     model = Book
     template_name = 'mainapp/contacts.html'
+    context_object_name = 'books'
+
 
 class AuthorListView(ListView):
     model = Author
     template_name = 'mainapp/author.html'
     context_object_name = 'authors'
-

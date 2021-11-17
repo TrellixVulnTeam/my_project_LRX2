@@ -1,28 +1,29 @@
 {% extends "mainapp/base.html" %}
 {% load static %}
+
 {% block content %}
-<h1>Магазин книг</h1>
-<h2>Книги</h2>
-<ul>
-    {% if book_category %}
-        {% for category in book_category %}
-        <li>{{ category.title }}</li>
-        {% endfor %}
-    {% else %}
-        <div>
-            Категорий нет
+<div class="title__header">
+    <h1 class="title__h1">Магазин книг</h1>
+    <h2>Книги</h2>
+</div>
+<div class="block__category">
+    {% for category in book_category %}
+        <div class="category__row">
+            <div class="category__card">
+                {{ category.title }}
+                {{ category.short_description }}
+            </div>
+                    {% for book in books %}
+                        {% if book.category.pk == category.pk %}
+                        <div class="book__card">
+                            {{book.title}}
+                            {{book.short_description}}
+                            {{book.description}}
+                            {{book.price}}
+                        </div>
+                        {% endif %}
+                    {% endfor %}
         </div>
-    {% endif %}
-</ul>
-<ul>
-    {% if books %}
-        {% for book in books %}
-        <li> {{book.title}}</li>
-        {% endfor %}
-    {% else %}
-        <div>
-            Книги не найдены
-        </div>
-    {% endif %}
-</ul>
+    {% endfor %}
+</div>
 {% endblock %}
