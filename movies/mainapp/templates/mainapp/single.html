@@ -44,12 +44,12 @@
                         <p class="movie_option"><strong>Страна: </strong>{{movie.country}}</p>
                         <p class="movie_option"><strong>Режиссеры: </strong>
                             {% for director in movie.directors.all %}
-                            {{ director.name }}
+                            <a href="{{ director.get_absolute_url }}">{{ director.name }}</a>
                             {% endfor %}
                         </p>
                         <p class="movie_option"><strong>Актеры: </strong>
                             {% for actor in movie.actors.all %}
-                            {{ actor.name }}
+                            <a href="{{ actor.get_absolute_url }}">{{ actor.name }}</a>
                             {% endfor %}
                         </p>
                         <p class="movie_option"><strong>Жанры: </strong>
