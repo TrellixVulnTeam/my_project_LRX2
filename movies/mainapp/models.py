@@ -111,11 +111,12 @@ class RatingStar(models.Model):
     value = models.SmallIntegerField(verbose_name='Значение', default=0)
 
     def __str__(self):
-        return self.value
+        return f'{self.value}'
 
     class Meta:
         verbose_name = 'Звезда рейтинга'
         verbose_name_plural = 'Звезды рейтинга'
+        ordering = ['-value']
 
 
 class Rating(models.Model):
@@ -126,11 +127,11 @@ class Rating(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, verbose_name='Фильм')
 
     def __str__(self):
-        return self.movie
+        return f'{self.star} - {self.movie}'
 
     class Meta:
-        verbose_name = 'Звезда рейтинга'
-        verbose_name_plural = 'Звезды рейтинга'
+        verbose_name = 'Рейтинг'
+        verbose_name_plural = 'Рейтинги'
 
 
 class Reviews(models.Model):

@@ -1,8 +1,9 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
 from .models import Movie, Actor, Genre
-from .forms import ReviewForm
+from .forms import ReviewForm, RatingForm
 
 
 class GenreYear:
@@ -10,7 +11,7 @@ class GenreYear:
         return Genre.objects.all()
 
     def get_years(self):
-        return Movie.objects.filter(draft=False).values('year')
+        return Movie.objects.filter(draft=False).values('year').distinct()
 
 
 class MoviesListView(GenreYear, ListView):
@@ -29,6 +30,11 @@ class MovieDetailView(GenreYear, DetailView):
     template_name = 'mainapp/single.html'
     context_object_name = 'movie'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['star_form'] = RatingForm()
+        return context
+
 
 class AddReview(View):
     """Отзывы"""
@@ -45,7 +51,7 @@ class AddReview(View):
         return redirect(movie.get_absolute_url())
 
 
-class ActorDetailView(DetailView):
+class ActorDetailView(GenreYear, DetailView):
     model = Actor
     template_name = 'mainapp/actor.html'
     slug_field = 'name'
@@ -54,13 +60,14 @@ class ActorDetailView(DetailView):
 
 class FilterMovieView(GenreYear, ListView):
     model = Movie
+    queryset = Movie.objects.filter(draft=False)
     template_name = 'mainapp/index.html'
     context_object_name = 'movies'
     extra_context = {'title': 'Фильмы'}
 
     def get_queryset(self):
         queryset = Movie.objects.filter(
-            year__in=self.request.GET.getlist('year'),
-            genres__in=self.request.GET.getlist('genre')
+            Q(year__in=self.request.GET.getlist('year')) |
+            Q(genres__in=self.request.GET.getlist('genre'))
         )
         return queryset
