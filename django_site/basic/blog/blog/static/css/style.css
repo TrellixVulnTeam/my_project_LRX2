@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+.links__menu {
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;  
+    color: #8C8C8C;
+    text-decoration-line: none;
+}
+
+.link:hover {
+    color: #cfcdcd;
+}
+
+.link:visited {
+    color:#8C8C8C;
+    text-decoration-line: none;
+}
+
+.hero__header {
+    background-image: url('/static/img/Group\ 1.png');
+    height: 1096px;
+    left: 0px;
+    top: 0px;
+}
+
+.header__center {
+    height: 1096px;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top__heading {
+    font-family: 'Bakbak One', cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 99px;
+    color: #FFFFFF;
+}
+
+.bot__heading {
+    width: 1027px;
+    padding-top: 32px;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.article {
+    padding-top: 115px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.article__content {
+    width: 933px;
+    margin-left: 47px;
+    margin-right: 150px;
+}
+
+.article__img {
+    width: 240px;
+    height: 226px;
+    filter: drop-shadow(3px 23px 50px rgba(0, 0, 0, 0.27)) drop-shadow(6px 8px 20px rgba(30, 14, 98, 0.35));
+    border-radius: 7px;
+}
+
+.article__heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 65px;
+    line-height: 80px;
+    color: #482BE7;
+    font-family: 'Bakbak One', cursive;
+    text-decoration-line: none;
+}
+
+.article__heading:hover {
+    color: #3c29a8;
+}
+
+.heading__username {
+    display: flex;
+    justify-content:left;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    
+}
+
+.article__username{
+    color: #5845A5;
+}
+
+.arcticle__date{
+    margin-left: 10px;
+    color: #8C8C8C;  
+}
+
+.article__text {
+    padding-top: 15px;
+    width: 894px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 35px;
+    color: #AAAAAA;
+}
+
+.article__line {
+    padding-top: 49px;  
+    border-bottom: 1px solid #DDDDDD;
+}

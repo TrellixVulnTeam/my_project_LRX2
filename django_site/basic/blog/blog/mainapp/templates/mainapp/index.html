@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+{% for article in articles %}
+<div class="article">
+    <img src="{{ article.image.url }}" class="article__img" alt="">
+    <div class="article__content">
+        <a href="article/{{ article.pk }}" class="article__heading">{{ article.title }}</a>
+        <div class="heading__username">
+            <p class="article__username">Irving Suárez</p>
+            <p class="arcticle__date">{{ article.created_at }}</p>
+        </div>
+        <p class="article__text">{{ article.description }}</p>
+        <div class="article__line"></div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
